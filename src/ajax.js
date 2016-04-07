@@ -75,6 +75,8 @@
     $private.setHeaders = function setHeaders (xhr, headers) {
       headers = headers || {}
 
+      headers['X-Requested-With'] = 'XMLHttpRequest'
+
       if (!$private.hasContentType(headers)) {
         headers['Content-Type'] = 'application/x-www-form-urlencoded'
       }
